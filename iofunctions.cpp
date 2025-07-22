@@ -16,7 +16,7 @@ IOFunctions::IOFunctions(QObject *r, QThread *pipereader, QObject *parent) : QOb
 }
 
 void IOFunctions::putStrSlot(QString msg) {
-    QTextStream(stdout) << msg << endl;
+    QTextStream(stdout) << msg << "\n";
 }
 
 void IOFunctions::sendToQML(QString msg) {
