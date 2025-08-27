@@ -20,6 +20,10 @@ int main(int argc, char *argv[])
 
     parser.process(app);
     const QStringList args = parser.positionalArguments();
+    if (args.isEmpty()) {
+        parser.showHelp(1);
+        return 1;
+    }
     if (parser.isSet(classOption)) {
         QCoreApplication::setApplicationName(parser.value(classOption)) ;
     }
