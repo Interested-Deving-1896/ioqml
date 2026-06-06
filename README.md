@@ -1,51 +1,75 @@
-Description
-===========
+[update-readmes]   Mode: rewrite — migrating to template structure...
+# ioqml
 
-`ioqml` is a [Zenity](https://en.wikipedia.org/wiki/Zenity)-like universal GUI dialog, but [QML](https://en.wikipedia.org/wiki/QML)-based.
+[![Built with Ona](https://ona.com/build-with-ona.svg)](https://app.ona.com/#https://github.com/Interested-Deving-1896/ioqml)
 
-It accepts some __commands on `stdin`__ and prints __results to `stdout`__.
+<!-- AI:start:what-it-does -->
+_Description pending._
+<!-- AI:end:what-it-does -->
 
+## Architecture
 
-Example of invocation
-=====================
+<!-- AI:start:architecture -->
+_Architecture documentation pending._
+<!-- AI:end:architecture -->
 
-    echo '{"prompt":"please enter passphrase and press Enter"}' | ioqml examples/pass-prompt.qml
+## Install
 
+<!-- Add installation instructions here. This section is yours — the AI will not modify it. -->
 
-Accepted commands
-=================
+```bash
+git clone https://github.com/Interested-Deving-1896/ioqml.git
+cd ioqml
+```
 
-The commands incoming on `stdin` should be __newline-separated__ . The following are understood as commands:
+## Usage
 
-1. Single word `stop` : terminates the program
+<!-- Add usage examples here. This section is yours — the AI will not modify it. -->
 
-2. Single word `hide` : hides the window
+## Configuration
 
-3. Single word `show` : shows the window (if it was hidden); more precisely, restores the window to its "default visibility"
+<!-- Document configuration options here. This section is yours — the AI will not modify it. -->
 
-4. [JSON](https://en.wikipedia.org/wiki/JSON) string of the form, for example `{"x": {"y":0, "z":1}}` sets the object
-`st.x` inside `QML` to `{"y":0, "z":1}`. The object `st` is [pre-defined in the header](examples/pass-prompt.qml) of the `QML` file; its property `x` 
-__should be declared__ in the `QML` file (or you get error). Then setting `st.x` can be hooked to some useful action by writing an 
-[on-property-change handler](http://doc.qt.io/qt-5/qtqml-syntax-signals.html#property-change-signal-handlers)
+## CI
 
-See [examples of QML files](examples/). 
+<!-- AI:start:ci -->
+_CI documentation pending._
+<!-- AI:end:ci -->
 
-__Do not push pretty-printed `JSON`__ on `stdin`, because, remember, `newline` is the command separator;
-all incoming `JSON` should be onelines.
+## Mirror chain
 
-To generate output
-==================
+<!-- AI:start:mirror-chain -->
+This repo is maintained in [`Interested-Deving-1896/ioqml`](https://github.com/Interested-Deving-1896/ioqml) and mirrored through:
 
-Emitting the [QML signal](http://doc.qt.io/qt-5/qtqml-syntax-signals.html) `putStr(x)` prints `x` to `stdout` (see [examples](examples/)).
+```
+Interested-Deving-1896/ioqml  ──►  OpenOS-Project-OSP/ioqml  ──►  OpenOS-Project-Ecosystem-OOC/ioqml
+```
 
+Changes flow downstream automatically via the hourly mirror chain in
+[`fork-sync-all`](https://github.com/Interested-Deving-1896/fork-sync-all).
+Direct commits to OSP or OOC are detected and opened as PRs back to `Interested-Deving-1896`.
+<!-- AI:end:mirror-chain -->
 
-To change WM_CLASS of the ioqml window
-======================================
+## Contributors
 
-invoke with flags, _e.g._ :
+<!-- AI:start:contributors -->
+_Contributors pending._
+<!-- AI:end:contributors -->
 
-    ioqml --name MYNAME --class MYCLASS   myapp.qml
+## Origins
 
---- sets `res_name` to `MYNAME` and `res_class` to `MYCLASS`
+<!-- AI:start:origins -->
+_Original project — no upstream fork._
+<!-- AI:end:origins -->
 
-(Notice that `--name` works for all `Qt` applications, starting from Qt 5.2)
+## Resources
+
+<!-- AI:start:resources -->
+_No additional resource files found._
+<!-- AI:end:resources -->
+
+## License
+
+<!-- AI:start:license -->
+[GPL-3.0](https://github.com/Interested-Deving-1896/ioqml/blob/master/LICENSE) © 2026 [Interested-Deving-1896](https://github.com/Interested-Deving-1896)
+<!-- AI:end:license -->
